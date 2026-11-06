@@ -1,0 +1,13 @@
+flowchart TB
+    SCH["Scheduler"] --> A["Workflow A: Mon, Wed, Fri 10:00"]
+    SCH --> B["Workflow B: Mon 09:00"]
+    A --> WS["Web search: trends"]
+    A --> DB[("ContentPost")]
+    A --> LLM["LLM: post and replies"]
+    A --> IMG["Image generation"]
+    A --> LI["LinkedIn API"]
+    A --> NT["Owner notification"]
+    LI --> DB
+    B --> LI
+    B --> LLM
+    B --> RP["Weekly report"]

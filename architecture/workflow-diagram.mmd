@@ -1,0 +1,13 @@
+flowchart TD
+    T["Mon, Wed, Fri 10:00"] --> R["Research trends"]
+    R --> H["Retrieve last 15 ContentPost"]
+    H --> D{"Topic in last 10 posts?"}
+    D -->|yes| R
+    D -->|no| G["Generate story-first post"]
+    G --> I["Generate AI image"]
+    I --> P["Publish to LinkedIn"]
+    P --> OK{"Success?"}
+    OK -->|no| F["Record failure and notify owner"]
+    OK -->|yes| S["Save URN and set status posted"]
+    S --> C["Reply to unanswered comments on last 3 posts"]
+    C --> N["Notify owner: hook, reasoning, link"]
